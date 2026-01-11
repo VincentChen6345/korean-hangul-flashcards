@@ -1,0 +1,78 @@
+.feature-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
+}
+
+.heading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: larger;
+}
+.title {
+  margin-top: -20px;
+  font-size: large;
+}
+
+.title-color {
+  color: rgb(34, 80, 167);
+}
+
+.card-counter {
+  text-align: center;
+  padding: 10px 0px 10px 0;
+  font-size: x-large;
+  color: #6d6d6d;
+}
+
+.filter-container button,
+.cardControl-container button {
+  font-size: large;
+  padding: 10px 30px 10px 30px;
+  border-radius: 30px;
+  border-style: none;
+  margin: 10px;
+  color: inherit;
+  background-color: white;
+}
+.section-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: rgb(0, 103, 249);
+  width: 100%;
+}
+.card-container {
+  background-color: white;
+  width: 60vw;
+  height: 35vw;
+  border-radius: 30px;
+  padding: 25px 40px 25px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.tag {
+  background-color: rgb(221, 232, 254);
+  padding: 5px 10px 5px 10px;
+  border-radius: 10px;
+  text-align: right;
+  width: min-content;
+  align-self: flex-end;
+}
+.character {
+  font-size: 200px;
+
+  margin: auto;
+  line-height: 200px;
+}
+.reveal {
+  color: #6d6d6d93;
+  font-size: larger;
+}

@@ -1,0 +1,57 @@
+Colors
+Tailwind Color Classes:
+
+Indigo shades:
+
+indigo-50 - Background gradient (very light indigo)
+indigo-500 - Card back gradient, progress bar fill
+indigo-600 - Title, icons, character text, shuffle button text
+indigo-900 - Title text (dark indigo)
+Purple shades:
+
+purple-50 - Background gradient (very light purple)
+purple-600 - Card back gradient, progress bar fill
+Gray shades:
+
+gray-200 - Progress bar track
+gray-400 - "Click to reveal" hint text
+gray-600 - Card counter, progress label
+White:
+
+white - Card backgrounds, button backgrounds, text on colored backgrounds
+white/70 - Semi-transparent white (70% opacity) for character on back
+white/20 - Sound button background (20% opacity)
+white/30 - Sound button hover (30% opacity)
+Fonts
+No custom fonts are used - the app relies on the default system font stack provided by the browser (typically sans-serif).
+
+The font sizing is controlled by:
+
+Default base styles from /src/styles/theme.css
+Tailwind text size classes: text-lg, text-xl, text-2xl, text-5xl, text-8xl, and text-[12rem] (custom size)
+
+
+
+Answer card- color gradients
+The gradient color effect on the answer side of the card is created using Tailwind CSS gradient utility classes. Here's how it works:
+
+The Gradient Classes
+<div className="bg-gradient-to-br from-indigo-500 to-purple-600">
+Breaking it down:
+
+bg-gradient-to-br - This sets up a gradient background that flows from the top-left to the bottom-right (br = bottom-right)
+
+Other direction options: bg-gradient-to-r (right), bg-gradient-to-t (top), bg-gradient-to-bl (bottom-left), etc.
+from-indigo-500 - This defines the starting color of the gradient (indigo-500)
+
+to-purple-600 - This defines the ending color of the gradient (purple-600)
+
+How It Works
+Tailwind automatically creates a smooth color transition between the two colors, going diagonally from top-left (indigo) to bottom-right (purple).
+
+Other Gradients in the App
+The same technique is used elsewhere:
+
+Background: bg-gradient-to-br from-indigo-50 to-purple-50 (very subtle light gradient)
+Progress bar: bg-gradient-to-r from-indigo-500 to-purple-600 (left to right gradient)
+You can customize this by changing the direction (to-br, to-r, to-l, etc.) or the colors (from-X and to-X)!
