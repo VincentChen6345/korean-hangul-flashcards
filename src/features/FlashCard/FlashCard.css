@@ -26,6 +26,7 @@
   padding: 10px 0px 10px 0;
   font-size: x-large;
   color: #6d6d6d;
+  margin-bottom: 10px;
 }
 
 .filter-container button,
@@ -45,26 +46,57 @@
   color: rgb(0, 103, 249);
   width: 100%;
 }
-.card-container {
+.card-front {
   background-color: white;
-  width: 60vw;
-  height: 35vw;
+  width: 50vw;
+  height: 30vw;
   border-radius: 30px;
   padding: 25px 40px 25px 40px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 10px;
   margin-bottom: 10px;
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  backface-visibility: hidden;
+  pointer-events: none;
 }
 
 .tag {
   background-color: rgb(221, 232, 254);
-  padding: 5px 10px 5px 10px;
+  padding: 7px 12px 7px 12px;
   border-radius: 10px;
   text-align: right;
   width: min-content;
   align-self: flex-end;
+  font-size: small;
+}
+.tag-back {
+  color: white;
+  background-color: rgba(221, 232, 254, 0.45);
+}
+.card-back {
+  background-image: linear-gradient(
+    135deg,
+    rgb(115, 131, 236),
+    rgb(116, 198, 252)
+  );
+  width: 50vw;
+  height: 30vw;
+  border-radius: 30px;
+  padding: 25px 40px 25px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 10px;
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%) rotateY(180deg);
+  backface-visibility: hidden;
+  pointer-events: none;
 }
 .character {
   font-size: 200px;
@@ -75,4 +107,48 @@
 .reveal {
   color: #6d6d6d93;
   font-size: larger;
+}
+.card-container {
+  position: relative;
+  box-shadow: none;
+  width: 100vw;
+  height: 35vw;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  pointer-events: auto;
+}
+.card-front,
+.card-back,
+button {
+  box-shadow: 5px 5px 5px rgba(216, 216, 216, 0.592);
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+.pronunciation {
+  color: white;
+  font-size: 120px;
+  margin-bottom: 20px;
+}
+.hangul {
+  color: white;
+  font-size: 30px;
+}
+.char-name {
+  color: white;
+}
+.card-container button {
+  margin-top: auto;
+  font-size: small;
+  padding: 10px 30px 10px 30px;
+  border-radius: 30px;
+  border-style: none;
+  box-shadow: none;
+  color: white;
+  background-color: rgba(255, 255, 255, 0.244);
+}
+.flipped {
+  transform: rotateY(180deg);
 }
