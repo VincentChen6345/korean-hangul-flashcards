@@ -38,6 +38,7 @@
   margin: 10px;
   color: inherit;
   background-color: white;
+  width: 150px;
 }
 .section-container {
   display: flex;
@@ -56,10 +57,9 @@
   flex-direction: column;
   align-items: center;
   margin-bottom: 10px;
-  position: absolute;
-  left: 50%;
+
   top: 0;
-  transform: translateX(-50%);
+
   backface-visibility: hidden;
   pointer-events: none;
 }
@@ -111,16 +111,20 @@
 .card-container {
   position: relative;
   box-shadow: none;
-  width: 100vw;
+  /* width: 100%; */
+  max-width: 800px;
   height: 35vw;
   transition: transform 0.6s;
   transform-style: preserve-3d;
   pointer-events: auto;
+  display: flex;
+  justify-content: center;
 }
 .card-front,
 .card-back,
 button {
   box-shadow: 5px 5px 5px rgba(216, 216, 216, 0.592);
+  pointer-events: auto;
 }
 
 button:hover {
@@ -151,4 +155,9 @@ button:hover {
 }
 .flipped {
   transform: rotateY(180deg);
+}
+
+.filter-container .selected {
+  background-color: rgb(115, 131, 236);
+  color: white;
 }
