@@ -70,5 +70,3 @@ export default function FlashCard() {
     </div>
   );
 }
-
-//fix - "all" filter button, it crashes when i switch back to "all"

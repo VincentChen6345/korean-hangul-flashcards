@@ -1,26 +1,21 @@
-import { useState } from "react";
-
-export default function LetterFilter({ clickHandler, buttonID, setButtonID }) {
+import { filter_buttons } from "../functions&variables";
+export default function LetterFilter({ clickHandler, buttonID }) {
   return (
     <div className="filter-container">
-      <button
-        className={buttonID === "all" ? "selected" : ""}
-        onClick={() => clickHandler("all")}
-      >
-        All
-      </button>
-      <button
-        className={buttonID === "consonant" ? "selected" : ""}
-        onClick={() => clickHandler("consonant")}
-      >
-        Consonants
-      </button>
-      <button
-        className={buttonID === "vowel" ? "selected" : ""}
-        onClick={() => clickHandler("vowel")}
-      >
-        Vowels
-      </button>
+      {filter_buttons.map((btn) => (
+        <button
+          key={btn.type}
+          className={buttonID === btn.type ? "selected" : ""}
+          onClick={() => clickHandler(btn.type)}
+        >
+          {btn.labelDesktop}
+        </button>
+      ))}
+      <select className="filter-select">
+        {filter_buttons.map((btn) => {
+          return <option key={btn.type}>{btn.labelMobile}</option>;
+        })}
+      </select>
     </div>
   );
 }

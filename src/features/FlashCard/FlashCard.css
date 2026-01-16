@@ -1,9 +1,25 @@
+/* FlashCard component */
 .feature-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100vw;
 }
+.section-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: rgb(0, 103, 249);
+  width: 100%;
+}
+.card-counter {
+  text-align: center;
+  padding: 10px 0px 10px 0;
+  font-size: x-large;
+  color: #6d6d6d;
+  margin-bottom: 10px;
+}
+/* Header component */
 
 .heading {
   display: flex;
@@ -20,15 +36,16 @@
 .title-color {
   color: rgb(34, 80, 167);
 }
-
-.card-counter {
-  text-align: center;
-  padding: 10px 0px 10px 0;
-  font-size: x-large;
-  color: #6d6d6d;
-  margin-bottom: 10px;
+/* Filter buttons */
+.filter-container {
+  display: flex;
+  flex: row;
+  margin-bottom: 15px;
 }
-
+.filter-container .selected {
+  background-color: rgb(115, 131, 236);
+  color: white;
+}
 .filter-container button,
 .cardControl-container button {
   font-size: large;
@@ -39,13 +56,41 @@
   color: inherit;
   background-color: white;
   width: 150px;
-}
-.section-container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  color: rgb(0, 103, 249);
-  width: 100%;
+  justify-content: center;
+}
+button:hover {
+  cursor: pointer;
+}
+.filter-select {
+  display: none;
+  padding: 8px 20px 8px 20px;
+  border-radius: 15px;
+  border-style: none;
+  width: 144px;
+}
+
+/* flashcards-front*/
+.card-container {
+  position: relative;
+  box-shadow: none;
+  /* width: 100%; */
+  max-width: 800px;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  pointer-events: auto;
+  display: flex;
+  justify-content: center;
+}
+.card-container button {
+  margin-top: auto;
+  font-size: small;
+  padding: 10px 30px 10px 30px;
+  border-radius: 30px;
+  border-style: none;
+  box-shadow: none;
+  color: white;
+  background-color: rgba(255, 255, 255, 0.244);
 }
 .card-front {
   background-color: white;
@@ -57,9 +102,7 @@
   flex-direction: column;
   align-items: center;
   margin-bottom: 10px;
-
   top: 0;
-
   backface-visibility: hidden;
   pointer-events: none;
 }
@@ -73,6 +116,20 @@
   align-self: flex-end;
   font-size: small;
 }
+.character {
+  font-size: 200px;
+
+  margin: auto;
+  line-height: 200px;
+}
+.card-front,
+.card-back,
+button {
+  box-shadow: 5px 5px 5px rgba(216, 216, 216, 0.592);
+  pointer-events: auto;
+}
+
+/* flashcards-back */
 .tag-back {
   color: white;
   background-color: rgba(221, 232, 254, 0.45);
@@ -98,37 +155,14 @@
   backface-visibility: hidden;
   pointer-events: none;
 }
-.character {
-  font-size: 200px;
-
-  margin: auto;
-  line-height: 200px;
+.char-description {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .reveal {
   color: #6d6d6d93;
   font-size: larger;
-}
-.card-container {
-  position: relative;
-  box-shadow: none;
-  /* width: 100%; */
-  max-width: 800px;
-  height: 35vw;
-  transition: transform 0.6s;
-  transform-style: preserve-3d;
-  pointer-events: auto;
-  display: flex;
-  justify-content: center;
-}
-.card-front,
-.card-back,
-button {
-  box-shadow: 5px 5px 5px rgba(216, 216, 216, 0.592);
-  pointer-events: auto;
-}
-
-button:hover {
-  cursor: pointer;
 }
 
 .pronunciation {
@@ -143,21 +177,140 @@ button:hover {
 .char-name {
   color: white;
 }
-.card-container button {
-  margin-top: auto;
-  font-size: small;
-  padding: 10px 30px 10px 30px;
-  border-radius: 30px;
-  border-style: none;
-  box-shadow: none;
-  color: white;
-  background-color: rgba(255, 255, 255, 0.244);
-}
 .flipped {
   transform: rotateY(180deg);
 }
-
-.filter-container .selected {
-  background-color: rgb(115, 131, 236);
-  color: white;
+/* card navigation buttons */
+.cardControl-container {
+  display: flex;
+  flex-direction: row;
 }
+
+.desktop-button,
+.desktop-nav_button {
+  display: block;
+}
+.mobile-button,
+.mobile-nav_button {
+  display: none;
+}
+
+/* Media queries */
+
+@media screen and (max-width: 1050px) {
+  .filter-container button,
+  .cardControl-container button {
+    width: 120px;
+    font-size: small;
+  }
+}
+@media screen and (max-width: 950px) {
+  .card-back button {
+    text-align: center;
+  }
+  .desktop-button {
+    display: none;
+  }
+  .mobile-button {
+    display: block;
+    font-size: medium;
+  }
+
+  .card-front {
+    width: 60vw;
+    height: 40vw;
+  }
+  .card-back {
+    /* padding: 15px 25px 15px 25px; */
+    width: 60vw;
+    height: 40vw;
+  }
+}
+@media screen and (max-width: 720px) {
+  .card-front,
+  .card-back {
+    width: 60vw;
+    height: 45vw;
+  }
+  .pronunciation {
+    margin: 0;
+    font-size: 100px;
+  }
+}
+
+@media screen and (max-width: 530px) {
+  .heading {
+    font-size: medium;
+  }
+  .title {
+    font-size: medium;
+  }
+  .character {
+    line-height: 150px;
+  }
+  .card-back button {
+    padding: 5px 20px 5px 20px;
+  }
+  .card-back,
+  .card-front {
+    width: 70vw;
+    height: 50vw;
+    padding: 15px 15px 15px 15px;
+  }
+  .char-description {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .heading {
+    font-size: medium;
+  }
+  .title {
+    font-size: medium;
+  }
+  .character {
+    line-height: 150px;
+    font-size: 150px;
+  }
+  .card-back button {
+    padding: 5px 20px 5px 20px;
+  }
+  .card-back,
+  .card-front {
+    width: 70vw;
+    height: 50vw;
+  }
+  .char-description {
+    display: none;
+  }
+  .desktop-nav_button {
+    display: none;
+  }
+  .mobile-nav_button {
+    display: flex;
+    justify-content: center;
+  }
+  .cardControl-container button {
+    width: 40px;
+    padding: 12px 30px 12px 30px;
+    text-align: center;
+  }
+}
+@media screen and (max-width: 450px) {
+  .filter-container button {
+    display: none;
+  }
+  .filter-select {
+    display: block;
+  }
+  .character {
+    line-height: 100px;
+  }
+}
+
+/* ⚠️⚠️⚠️ 
+add filter functionality to dropdown menu
+finish styling
+
+*/
