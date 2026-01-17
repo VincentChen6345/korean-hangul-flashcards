@@ -11,14 +11,15 @@ export default function FlashCard() {
   const [isFlipped, setIsFlipped] = useState(false);
   const [cardIndex, setCardIndex] = useState(0);
   const [selectedID, setSelectedID] = useState("all");
-
+  const [selectedValue, setSelectedValue] = useState("all");
   //create local copy of alphabet, sorted by type.
   const sortedDeck = [...alphabet].sort((a, b) => a.type.localeCompare(b.type));
   const [deck, setDeck] = useState(sortedDeck);
   const [length, setLength] = useState(deck.length);
   const currCard = deck[cardIndex];
-  function filterHandler(buttonType) {
+  function applyCardFilter(buttonType) {
     setSelectedID(buttonType);
+    setSelectedValue(buttonType);
     const filteredDeck = sortedDeck.filter((el) =>
       el.type.includes(buttonType === "all" ? "" : buttonType)
     );
@@ -54,9 +55,10 @@ export default function FlashCard() {
           cardIndex + 1
         } of ${length}`}</div>
         <LetterFilter
-          clickHandler={filterHandler}
+          filterHandler={applyCardFilter}
           buttonID={selectedID}
           setButtonID={setSelectedID}
+          selectedValue={selectedValue}
         />
         <div
           className={`card-container ${isFlipped ? "flipped" : ""}`}
@@ -67,6 +69,9 @@ export default function FlashCard() {
         </div>
         <CardNavigation handleClick={cardNavHandler} />
       </section>
+      <footer>
+        <span className="name">by Vincent Chen</span>
+      </footer>
     </div>
   );
 }
