@@ -72,7 +72,6 @@ button:hover {
   padding: 8px 5px 8px 5px;
   border-radius: 15px;
   border-style: none;
-  /* width: 144px; */
   width: 144px;
   text-align: center;
 }
@@ -81,7 +80,6 @@ button:hover {
 .card-container {
   position: relative;
   box-shadow: none;
-  /* width: 100%; */
   max-width: 800px;
   transition: transform 0.6s;
   transform-style: preserve-3d;
@@ -101,8 +99,6 @@ button:hover {
 }
 .card-front {
   background-color: white;
-  width: 50vw;
-  height: 30vw;
   border-radius: 30px;
   padding: 25px 40px 25px 40px;
   display: flex;
@@ -135,7 +131,13 @@ button {
   box-shadow: 5px 5px 5px rgba(216, 216, 216, 0.592);
   pointer-events: auto;
 }
-
+.card-front,
+.card-back {
+  width: 50vw;
+  height: 40vw;
+  max-width: 623px;
+  max-height: 442px;
+}
 /* flashcards-back */
 .tag-back {
   color: white;
@@ -147,8 +149,6 @@ button {
     rgb(115, 131, 236),
     rgb(116, 198, 252)
   );
-  width: 50vw;
-  height: 30vw;
   border-radius: 30px;
   padding: 25px 40px 25px 40px;
   display: flex;
@@ -319,10 +319,3 @@ button {
     font-size: 90px;
   }
 }
-
-/* ⚠️⚠️⚠️ 
-add filter functionality to dropdown menu
-finish styling
-put select in a div and add a border to the div?
-
-*/
