@@ -1,0 +1,315 @@
+[
+  {
+    "id": 1,
+    "char": "ㄱ",
+    "type": "consonant",
+    "sound": "g/k",
+    "soundHint": "가",
+    "name": "[giyeok]"
+  },
+  { "id": 2, "char": "ㅏ", "type": "vowel", "sound": "a", "name": null },
+  {
+    "id": 3,
+    "char": "ㄴ",
+    "type": "consonant",
+    "sound": "n",
+    "soundHint": "나",
+    "name": "[nieun]"
+  },
+  {
+    "id": 4,
+    "char": "ㄷ",
+    "type": "consonant",
+    "sound": "d/t",
+    "soundHint": "다",
+    "name": "[digeut]"
+  },
+  {
+    "id": 5,
+    "char": "ㄹ",
+    "type": "consonant",
+    "sound": "r/l",
+    "soundHint": "라",
+    "name": "[rieul]"
+  },
+  {
+    "id": 6,
+    "char": "ㅁ",
+    "type": "consonant",
+    "sound": "m",
+    "soundHint": "마",
+    "name": "[mieum]"
+  },
+  {
+    "id": 7,
+    "char": "ㅂ",
+    "type": "consonant",
+    "sound": "b/p",
+    "soundHint": "바",
+    "name": "[bieup]"
+  },
+  {
+    "id": 8,
+    "char": "ㅅ",
+    "type": "consonant",
+    "sound": "s",
+    "soundHint": "사",
+    "name": "[siot]"
+  },
+  {
+    "id": 9,
+    "char": "ㅇ",
+    "type": "consonant",
+    "sound": "*silent",
+    "soundHint": null,
+    "name": "[ieung]"
+  },
+  {
+    "id": 10,
+    "char": "ㅈ",
+    "type": "consonant",
+    "sound": "j/ch",
+    "soundHint": "자",
+    "name": "[jieut]"
+  },
+  {
+    "id": 11,
+    "char": "ㅊ",
+    "type": "consonant",
+    "sound": "ch",
+    "soundHint": "차",
+    "name": "[chieut]"
+  },
+  {
+    "id": 12,
+    "char": "ㅋ",
+    "type": "consonant",
+    "sound": "k",
+    "soundHint": "카",
+    "name": "[kieuk]"
+  },
+  {
+    "id": 13,
+    "char": "ㅌ",
+    "type": "consonant",
+    "sound": "t",
+    "soundHint": "타",
+    "name": "[tieut]"
+  },
+  {
+    "id": 14,
+    "char": "ㅍ",
+    "type": "consonant",
+    "sound": "p",
+    "soundHint": "파",
+    "name": "[pieup]"
+  },
+  {
+    "id": 15,
+    "char": "ㅎ",
+    "type": "consonant",
+    "sound": "h",
+    "soundHint": "하",
+    "name": "[hieut]"
+  },
+  {
+    "id": 16,
+    "char": "ㄲ",
+    "type": "tense consonant",
+    "sound": "gg",
+    "soundHint": "까",
+    "name": "[san giyeok]"
+  },
+  {
+    "id": 17,
+    "char": "ㄸ",
+    "type": "tense consonant",
+    "sound": "dd",
+    "soundHint": "따",
+    "name": "[san digeut]"
+  },
+  {
+    "id": 18,
+    "char": "ㅃ",
+    "type": "tense consonant",
+    "sound": "bb",
+    "soundHint": "빠",
+    "name": "[san bieup]"
+  },
+  {
+    "id": 19,
+    "char": "ㅆ",
+    "type": "tense consonant",
+    "sound": "ss",
+    "soundHint": "싸",
+    "name": "[san siot]"
+  },
+  {
+    "id": 20,
+    "char": "ㅉ",
+    "type": "tense consonant",
+    "sound": "jj",
+    "soundHint": "짜",
+    "name": "[san jieut]"
+  },
+  {
+    "id": 21,
+    "char": "ㅑ",
+    "type": "vowel",
+    "sound": "ya",
+    "soundHint": null,
+    "name": null
+  },
+  {
+    "id": 22,
+    "char": "ㅓ",
+    "type": "vowel",
+    "sound": "eo",
+    "soundHint": null,
+    "name": null
+  },
+  {
+    "id": 23,
+    "char": "ㅕ",
+    "type": "vowel",
+    "sound": "yeo",
+    "soundHint": null,
+    "name": null
+  },
+  {
+    "id": 24,
+    "char": "ㅗ",
+    "type": "vowel",
+    "sound": "o",
+    "soundHint": null,
+    "name": null
+  },
+  {
+    "id": 25,
+    "char": "ㅛ",
+    "type": "vowel",
+    "sound": "yo",
+    "soundHint": null,
+    "name": null
+  },
+  {
+    "id": 26,
+    "char": "ㅜ",
+    "type": "vowel",
+    "sound": "oo",
+    "soundHint": null,
+    "name": null
+  },
+  {
+    "id": 27,
+    "char": "ㅠ",
+    "type": "vowel",
+    "sound": "yoo",
+    "soundHint": null,
+    "name": null
+  },
+  {
+    "id": 28,
+    "char": "ㅡ",
+    "type": "vowel",
+    "sound": "eu",
+    "soundHint": null,
+    "name": null
+  },
+  {
+    "id": 40,
+    "char": "ㅣ",
+    "type": "vowel",
+    "sound": "i",
+    "soundHint": null,
+    "name": null
+  },
+  {
+    "id": 29,
+    "char": "ㅢ",
+    "type": "vowel",
+    "sound": "eui",
+    "soundHint": null,
+    "name": null
+  },
+  {
+    "id": 30,
+    "char": "ㅔ",
+    "type": "vowel",
+    "sound": "e",
+    "soundHint": null,
+    "name": null
+  },
+  {
+    "id": 31,
+    "char": "ㅖ",
+    "type": "vowel",
+    "sound": "ye",
+    "soundHint": null,
+    "name": null
+  },
+  {
+    "id": 32,
+    "char": "ㅐ",
+    "type": "vowel",
+    "sound": "ae",
+    "soundHint": null,
+    "name": null
+  },
+  {
+    "id": 33,
+    "char": "ㅒ",
+    "type": "vowel",
+    "sound": "yae",
+    "soundHint": null,
+    "name": null
+  },
+  {
+    "id": 34,
+    "char": "ㅚ",
+    "type": "vowel",
+    "sound": "we",
+    "soundHint": null,
+    "name": null
+  },
+  {
+    "id": 35,
+    "char": "ㅙ",
+    "type": "vowel",
+    "sound": "we",
+    "soundHint": null,
+    "name": null
+  },
+  {
+    "id": 36,
+    "char": "ㅞ",
+    "type": "vowel",
+    "sound": "we",
+    "soundHint": null,
+    "name": null
+  },
+  {
+    "id": 37,
+    "char": "ㅟ",
+    "type": "vowel",
+    "sound": "wi",
+    "soundHint": null,
+    "name": null
+  },
+  {
+    "id": 38,
+    "char": "ㅘ",
+    "type": "vowel",
+    "sound": "wa",
+    "soundHint": null,
+    "name": null
+  },
+  {
+    "id": 39,
+    "char": "ㅝ",
+    "type": "vowel",
+    "sound": "wo",
+    "soundHint": null,
+    "name": null
+  }
+]
