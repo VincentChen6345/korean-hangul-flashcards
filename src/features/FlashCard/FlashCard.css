@@ -138,6 +138,32 @@ button {
   max-width: 623px;
   max-height: 442px;
 }
+
+.loader {
+  text-align: center;
+  font-size: x-large;
+  /*animation fade in and out loop*/
+  animation-name: fadeInOut;
+  animation-duration: 2.5s;
+  animation-iteration-count: infinite;
+}
+.error {
+  color: black;
+}
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.loading-text-1 {
+  color: rgb(83, 83, 83);
+}
 /* flashcards-back */
 .tag-back {
   color: white;
