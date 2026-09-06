@@ -1,4 +1,6 @@
 export default function CardBack({ isFlipped, setIsFlipped, card }) {
+  if (!card) return null;
+
   const { char, type, sound, name, soundHint } = card;
   function playHangulSound(character) {
     const speech = new SpeechSynthesisUtterance(character);
