@@ -1,124 +1,18 @@
 import "./FlashCard.css";
 import Header from "./Components/Header";
-import LetterFilter from "./Components/LetterFilter";
-import CardFront from "./Components/CardFront";
-import CardBack from "./Components/CardBack";
-import { useState, useEffect } from "react";
-import { shuffleArray } from "./functions&variables";
-
-import CardNavigation from "./Components/CardNavigation";
-
-const URL = `https://raw.githubusercontent.com/VincentChen6345/korean-hangul-flashcards/refs/heads/main/src/features/FlashCard/hangulData.json`;
+import FlashCardBoard from "./Components/FlashCardBoard";
+import { FlashCardProvider } from "./FlashCardContext";
 
 export default function FlashCard() {
-  const [isFlipped, setIsFlipped] = useState(false);
-  const [cardIndex, setCardIndex] = useState(0);
-  const [selectedID, setSelectedID] = useState("all");
-  const [selectedValue, setSelectedValue] = useState("all");
-  //error message state
-  const [error, setError] = useState("");
-  const [isLoading, setIsLoading] = useState(true);
-  const [alphabetData, setAlphabetData] = useState([]);
-
-  //useEffect to fetch alphabet JSON file
-  //account for errors messages , call on mount only, no dependencies
-  //create error message component and loader component
-  //create local copy of alphabet, sorted by type.
-
-  useEffect(function () {
-    async function fetchAlphabet() {
-      try {
-        setError("");
-        setIsLoading(true);
-        const response = await fetch(URL);
-        if (!response.ok) {
-          throw new Error("Something went wrong 😢 미안해요");
-        }
-        const data = await response.json();
-        console.log(data);
-        setAlphabetData(data); //set data as state
-      } catch (error) {
-        setError(error.message);
-      } finally {
-        setIsLoading(false);
-      }
-    }
-    fetchAlphabet();
-  }, []);
-  //sortedDeck depends on alphabetData that is fetched, this is initially set to [] on first render
-  const sortedDeck = [...alphabetData].sort((a, b) =>
-    a.type.localeCompare(b.type),
-  );
-  const [deck, setDeck] = useState(sortedDeck);
-  const [length, setLength] = useState(deck.length);
-
-  //useEffect to update sortedDeck,deck,length when alphabetData arrives from fetch
-
-  useEffect(
-    function () {
-      setDeck(sortedDeck);
-      setLength(sortedDeck.length);
-      console.log(deck);
-    },
-    [alphabetData],
-  );
-
-  const currCard = deck[cardIndex];
-  function applyCardFilter(buttonType) {
-    setSelectedID(buttonType);
-    setSelectedValue(buttonType);
-    const filteredDeck = sortedDeck.filter((el) =>
-      el.type.includes(buttonType === "all" ? "" : buttonType),
-    );
-    setDeck(filteredDeck);
-    setLength(filteredDeck.length);
-    setCardIndex(0);
-    setIsFlipped(false);
-  }
-  function cardNavHandler(type) {
-    setIsFlipped(false);
-    if (type === "Next") {
-      setCardIndex((cardIndex) =>
-        cardIndex === length - 1 ? 0 : cardIndex + 1,
-      );
-    }
-    if (type === "Previous") {
-      setCardIndex((cardIndex) =>
-        cardIndex === 0 ? length - 1 : cardIndex - 1,
-      );
-    }
-    if (type === "Shuffle") {
-      const shuffled = shuffleArray([...deck]); //local copy
-      setDeck(shuffled);
-      setCardIndex(0);
-    }
-  }
-
   return (
-    <div className="feature-container">
-      <Header />
-      <section className="section-container">
-        <div className="card-counter">{`Card ${
-          cardIndex + 1
-        } of ${length}`}</div>
-        <LetterFilter
-          filterHandler={applyCardFilter}
-          buttonID={selectedID}
-          setButtonID={setSelectedID}
-          selectedValue={selectedValue}
-        />
-        <div
-          className={`card-container ${isFlipped ? "flipped" : ""}`}
-          onClick={() => setIsFlipped(!isFlipped)}
-        >
-          <CardFront card={currCard} isLoading={isLoading} error={error} />
-          <CardBack card={currCard} />
-        </div>
-        <CardNavigation handleClick={cardNavHandler} />
-      </section>
-      <footer>
-        <span className="name">by Vincent Chen</span>
-      </footer>
-    </div>
+    <FlashCardProvider>
+      <div className="feature-container">
+        <Header />
+        <FlashCardBoard />
+        <footer>
+          <span className="name">by Vincent Chen</span>
+        </footer>
+      </div>
+    </FlashCardProvider>
   );
 }

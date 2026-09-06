@@ -2,21 +2,25 @@ import LetterFilter from "./LetterFilter";
 import CardFront from "./CardFront";
 import CardBack from "./CardBack";
 import CardNavigation from "./CardNavigation";
+import { useFlashCard } from "../FlashCardContext";
 
-export default function FlashCardBoard({
-  cardIndex,
-  isFlipped,
-  setIsFlipped,
-  selectedID,
-  setSelectedID,
-  selectedValue,
-  length,
-  currCard,
-  isLoading,
-  error,
-  cardNavHandler,
-  applyCardFilter,
-}) {
+export default function FlashCardBoard() {
+  const {
+    //destructure from useFlashCard context
+    cardIndex,
+    isFlipped,
+    setIsFlipped,
+    selectedID,
+    setSelectedID,
+    selectedValue,
+    length,
+    currCard,
+    isLoading,
+    error,
+    cardNavHandler,
+    applyCardFilter,
+  } = useFlashCard();
+
   return (
     <section className="section-container">
       <div className="card-counter">{`Card ${cardIndex + 1} of ${length}`}</div>

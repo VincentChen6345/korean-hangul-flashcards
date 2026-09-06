@@ -30,4 +30,10 @@ const nav_buttons = [
     icon: "➡️",
   },
 ];
-export { shuffleArray, nav_buttons, filter_buttons };
+
+function filterDeckByType(deck, buttonType) {
+  return deck.filter((el) =>
+    el.type.includes(buttonType === "all" ? "" : buttonType),
+  );
+}
+export { shuffleArray, nav_buttons, filter_buttons, filterDeckByType };
