@@ -17,8 +17,9 @@ export function useFetchAlphabet(url) {
             throw new Error("Something went wrong 😢 미안해요");
           }
           const data = await response.json();
-          //console.log(data);
-          setAlphabetData(data); //set data as state
+
+          setAlphabetData(data);
+          //when this state updates,FlashCard() is rerendered. During rerender, sortedDeck gets updated with new alphabetData
         } catch (error) {
           setError(error.message);
         } finally {
@@ -32,3 +33,4 @@ export function useFetchAlphabet(url) {
 
   return { alphabetData, error, isLoading };
 }
+//useEffect to update sortedDeck,deck,length when alphabetData arrives from fetch
