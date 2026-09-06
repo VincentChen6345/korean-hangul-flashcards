@@ -1,10 +1,8 @@
 import { filter_buttons } from "../functions&variables";
-import { useStates } from "react";
 
 export default function LetterFilter({
   filterHandler,
   buttonID,
-  selectChangeHandler,
   selectedValue,
 }) {
   return (

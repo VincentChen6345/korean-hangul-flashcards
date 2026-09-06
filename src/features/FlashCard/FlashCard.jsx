@@ -4,7 +4,6 @@ import LetterFilter from "./Components/LetterFilter";
 import CardFront from "./Components/CardFront";
 import CardBack from "./Components/CardBack";
 import { useState, useEffect } from "react";
-//import { alphabet, shuffleArray } from "./functions&variables";
 import { shuffleArray } from "./functions&variables";
 
 import CardNavigation from "./Components/CardNavigation";
