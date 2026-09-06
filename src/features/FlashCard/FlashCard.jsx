@@ -4,7 +4,9 @@ import LetterFilter from "./Components/LetterFilter";
 import CardFront from "./Components/CardFront";
 import CardBack from "./Components/CardBack";
 import { useState, useEffect } from "react";
-import { alphabet, shuffleArray } from "./functions&variables";
+//import { alphabet, shuffleArray } from "./functions&variables";
+import { shuffleArray } from "./functions&variables";
+
 import CardNavigation from "./Components/CardNavigation";
 
 const URL = `https://raw.githubusercontent.com/VincentChen6345/korean-hangul-flashcards/refs/heads/main/src/features/FlashCard/hangulData.json`;
@@ -17,6 +19,7 @@ export default function FlashCard() {
   //error message state
   const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(true);
+  const [alphabetData, setAlphabetData] = useState([]);
 
   //useEffect to fetch alphabet JSON file
   //account for errors messages , call on mount only, no dependencies
@@ -34,6 +37,7 @@ export default function FlashCard() {
         }
         const data = await response.json();
         console.log(data);
+        setAlphabetData(data); //set data as state
       } catch (error) {
         setError(error.message);
       } finally {
@@ -42,9 +46,24 @@ export default function FlashCard() {
     }
     fetchAlphabet();
   }, []);
-  const sortedDeck = [...alphabet].sort((a, b) => a.type.localeCompare(b.type));
+  //sortedDeck depends on alphabetData that is fetched, this is initially set to [] on first render
+  const sortedDeck = [...alphabetData].sort((a, b) =>
+    a.type.localeCompare(b.type),
+  );
   const [deck, setDeck] = useState(sortedDeck);
   const [length, setLength] = useState(deck.length);
+
+  //useEffect to update sortedDeck,deck,length when alphabetData arrives from fetch
+
+  useEffect(
+    function () {
+      setDeck(sortedDeck);
+      setLength(sortedDeck.length);
+      console.log(deck);
+    },
+    [alphabetData],
+  );
+
   const currCard = deck[cardIndex];
   function applyCardFilter(buttonType) {
     setSelectedID(buttonType);

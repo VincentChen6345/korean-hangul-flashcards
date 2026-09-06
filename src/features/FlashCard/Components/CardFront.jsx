@@ -1,14 +1,12 @@
 export default function CardFront({ card, isLoading, error }) {
-  const { type, char } = card;
-
   return (
     <div className="card-front">
       {isLoading && <Loader />}
       {!isLoading && error && <ErrorMessage message={error} />}
-      {!isLoading && !error && (
+      {!isLoading && !error && card && (
         <>
-          <span className="tag">{type}</span>
-          <span className="character">{char}</span>
+          <span className="tag">{card.type}</span>
+          <span className="character">{card.char}</span>
           <span className="reveal">Click to reveal</span>
         </>
       )}
